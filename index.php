@@ -24,7 +24,7 @@ if ($connection) {
     <form action="./store.php" method="POST">
         <div class="formbold-input-flex">
           <div>
-              <label for="name" class="formbold-form-label"> First name </label>
+              <label for="name" class="formbold-form-label"> Name </label>
               <input
               type="text"
               name="name"

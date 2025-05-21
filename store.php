@@ -40,7 +40,7 @@ $email = $_POST['e-mail'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
  
-$sql = "INSERT INTO students (name, e-mail, phone, address) VALUES ('$name', '$email', '$phone', '$address')";
+$sql = "INSERT INTO students ('name', 'e-mail', 'phone', 'address') VALUES ('$name', '$email', '$phone', '$address')";
 if ($connection->query($sql) === TRUE) {
     header("Location: index.php");
 } else {
