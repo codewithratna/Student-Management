@@ -12,7 +12,7 @@ if ($conn->query($sql) === TRUE) {
     header("Location: index.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-}*/
+}
 
 $servername = "localhost";
 $username = "root";
@@ -25,5 +25,25 @@ if ($connection) {
     echo "Connection successful";
 } else {
     echo "connection failed check again";
+}*/
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "student_management";
+ 
+$connection = mysqli_connect($servername, $username, $password, $dbname);
+ 
+$name = $_POST['name'];
+$email = $_POST['e-mail'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+ 
+$sql = "INSERT INTO students (name, e-mail, phone, address) VALUES ('$name', '$email', '$phone', '$address')";
+if ($connection->query($sql) === TRUE) {
+    header("Location: index.php");
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 ?>

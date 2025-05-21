@@ -1,4 +1,6 @@
 <?php  
+
+/*
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,9 +12,9 @@ if ($connection) {
     echo "Connection successful";
 } else {
     echo "connection failed check again";
-}
-?>
+}*/
 
+?>
 
 
 <div class="formbold-main-wrapper">
@@ -22,38 +24,29 @@ if ($connection) {
     <form action="./store.php" method="POST">
         <div class="formbold-input-flex">
           <div>
-              <label for="firstname" class="formbold-form-label"> First name </label>
+              <label for="name" class="formbold-form-label"> First name </label>
               <input
               type="text"
-              name="firstname"
-              id="firstname"
+              name="name"
+              id="name"
               placeholder="Jane"
               class="formbold-form-input"
               />
           </div>
-          <div>
-              <label for="lastname" class="formbold-form-label"> Last name </label>
+           <div>
+              <label for="e-mail" class="formbold-form-label"> Mail </label>
               <input
-              type="text"
-              name="lastname"
-              id="lastname"
-              placeholder="Cooper"
+              type="email"
+              name="e-mail"
+              id="email"
+              placeholder="jhon@mail.com"
               class="formbold-form-input"
               />
           </div>
         </div>
 
         <div class="formbold-input-flex">
-          <div>
-              <label for="email" class="formbold-form-label"> Mail </label>
-              <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="jhon@mail.com"
-              class="formbold-form-input"
-              />
-          </div>
+          
           <div>
               <label for="phone" class="formbold-form-label"> Phone </label>
               <input
@@ -64,11 +57,21 @@ if ($connection) {
               class="formbold-form-input"
               />
           </div>
+
+          <div>
+              <label for="address" class="formbold-form-label"> address </label>
+              <input
+              type="text"
+              name="address"
+              id="address"
+              placeholder="address"
+              class="formbold-form-input"
+              />
+          </div>
         </div>
 
-        
-
       <div>
+      <!--
             <label for="message" class="formbold-form-label"> Message </label>
             <textarea
                 rows="6"
@@ -77,7 +80,7 @@ if ($connection) {
                 placeholder="Type your message"
                 class="formbold-form-input"
             ></textarea>
-        </div>
+        </div>-->
 
         <button class="formbold-btn">
             Send Message
@@ -85,6 +88,7 @@ if ($connection) {
     </form>
   </div>
 </div>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   * {
