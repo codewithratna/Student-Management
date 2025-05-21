@@ -11,14 +11,6 @@ if ($connection) {
 } else {
     echo "connection failed check again";
 }
-/* Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-//* Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";*/
 ?>
 
 
@@ -27,7 +19,7 @@ echo "Connected successfully";*/
   <!-- Author: FormBold Team -->
   <!-- Learn More: https://formbold.com -->
   <div class="formbold-form-wrapper">
-    <form action="https://formbold.com/s/FORM_ID" method="POST">
+    <form action="./store.php" method="POST">
         <div class="formbold-input-flex">
           <div>
               <label for="firstname" class="formbold-form-label"> First name </label>
