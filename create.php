@@ -5,75 +5,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h2>Add Student</h2>
-    <form action="store.php" method="POST">
-        Name: <input type="text" name="name" required><br>
-        Email: <input type="email" name="e-mail" required><br>
-        Phone: <input type="text" name="phone" required><br>
-        Address: <textarea name="address" required></textarea><br>
-        <input type="submit" value="Add Student">
-    </form>
-    <br><a href="index.php">Back to List</a>
-
-<?php  
-
-     require_once './config.php';
-    
-    ?>
-    
-    <?php
-
-        if($is_connect){
-             $sql = "SELECT * FROM `students`";
-             $result = $connection->query($sql);
-
-             echo "<pre>";
-
-             print_r($get_data);
-             die();
-
-      if($connection->query($sql));
-        }
-     ?>
-
-
-
-
-<div class="formbold-main-wrapper">
-  <!-- Author: FormBold Team -->
-  <!-- Learn More: https://formbold.com -->
-  <?php
-include 'config.php';
-
-$sql = "SELECT * FROM students";
-$result = $connection->query($sql);
-
-if ($result && $result->num_rows > 0) {
-    echo "<table border='1' cellpadding='10'>";
-    echo "<tr><th>Name</th><th>E-mail</th><th>Phone</th><th>Address</th></tr>";
-
-    while ($row = $result->fetch_assoc()) {
-        // Skip rows where all fields are empty
-        if (empty($row['Name']) && empty($row['e-mail']) && empty($row['Phone']) && empty($row['Address'])) {
-            continue;
-        }
-
-        echo "<tr>";
-        echo "<td>" . htmlspecialchars($row["Name"]) . "</td>";
-        echo "<td>" . htmlspecialchars($row["e-mail"]) . "</td>";
-        echo "<td>" . htmlspecialchars($row["Phone"]) . "</td>";
-        echo "<td>" . htmlspecialchars($row["Address"]) . "</td>";
-        echo "</tr>";
-    }
-
-    echo "</table>";
-} else {
-    echo "No student data found.";
-}
-?>
-
-  <div class="formbold-form-wrapper">
+<div class="formbold-form-wrapper">
     <form action="./store.php" method="POST">
         <div class="formbold-input-flex">
           <div>
@@ -141,6 +73,8 @@ if ($result && $result->num_rows > 0) {
     </form>
   </div>
 </div>
+</body>
+</html>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -278,7 +212,3 @@ if ($result && $result->num_rows > 0) {
   }
 
 </style>
-
-</div>
-</body>
-</html>
