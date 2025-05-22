@@ -32,18 +32,31 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "student_management";
- 
+$is_connect = false;
+
+
 $connection = mysqli_connect($servername, $username, $password, $dbname);
  
+require_once './config.php';
+
+if ($connection) {
+    $is_connect = true;
+}else {
+    echo "Connected";
+}
 $name = $_POST['name'];
 $email = $_POST['e-mail'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
  
-$sql = "INSERT INTO students ('name', 'e-mail', 'phone', 'address') VALUES ('$name', '$email', '$phone', '$address')";
+
+if ($is_connect){
+    $sql = "INSERT INTO `students`( `Name`, `e-mail`, `Phone`, `Address`) VALUES ('$name', '$email', '$phone', '$address')";
 if ($connection->query($sql) === TRUE) {
     header("Location: index.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+}
+
 ?>

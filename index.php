@@ -1,25 +1,60 @@
 <?php  
 
-/*
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "student_management";
+     require_once './config.php';
+    
+    ?>
+    
+    <?php
 
-$connection = mysqli_connect($servername, $username, $password, $dbname);
+        if($is_connect){
+             $sql = "SELECT * FROM `students`";
+             $result = $connection->query($sql);
 
-if ($connection) {
-    echo "Connection successful";
-} else {
-    echo "connection failed check again";
-}*/
+             echo "<pre>";
 
-?>
+             print_r($get_data);
+             die();
+
+      if($connection->query($sql));
+        }
+     ?>
+
+
 
 
 <div class="formbold-main-wrapper">
   <!-- Author: FormBold Team -->
   <!-- Learn More: https://formbold.com -->
+  <?php
+include 'config.php';
+
+$sql = "SELECT * FROM students";
+$result = $connection->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    echo "<table border='1' cellpadding='10'>";
+    echo "<tr><th>Name</th><th>E-mail</th><th>Phone</th><th>Address</th></tr>";
+
+    while ($row = $result->fetch_assoc()) {
+        // Skip rows where all fields are empty
+        if (empty($row['Name']) && empty($row['e-mail']) && empty($row['Phone']) && empty($row['Address'])) {
+            continue;
+        }
+
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($row["Name"]) . "</td>";
+        echo "<td>" . htmlspecialchars($row["e-mail"]) . "</td>";
+        echo "<td>" . htmlspecialchars($row["Phone"]) . "</td>";
+        echo "<td>" . htmlspecialchars($row["Address"]) . "</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "No student data found.";
+}
+?>
+
   <div class="formbold-form-wrapper">
     <form action="./store.php" method="POST">
         <div class="formbold-input-flex">
