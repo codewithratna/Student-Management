@@ -34,18 +34,16 @@ input[type=submit]:hover {
     background-color: #218838;
 }
 a {
-    color: #007bff;
+    color: #ffffff;
     text-decoration: none;
+    background-color: #6A64F1;
+    margin-bottom: 20px !important;
+    padding: 5px 10px 5px 10px;
+   
 }
-table {
-    width: 1200px;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: white;
 
-}
 table, th, td {
-    border: 1px solid #020101;
+    border: 1px solid #d8d8d8;
 }
 th, td {
     padding: 12px;
@@ -57,16 +55,52 @@ th {
 }
 
 table {
-    width: 1200px;
+    width: 1400px;
     border-collapse: collapse;
     margin: auto;
     background: white;
+   
+    
 }
 
 body {
     font-family: Arial, sans-serif;
     text-align-last: center;
     background-color: #f4f4f4;
-    margin: 0;
+    margin: 30px;
     padding: 20px;
+}
+
+a.view-btn {
+    background-color: #6A64F1;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+a.edit-btn {
+    background-color: #f1e364;
+    color: #000000;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+a.delete-btn {
+    background-color: #fc0000;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+a.add-btn {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0f02ff;
+    margin-bottom: 20px !important;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    font-size: 15px;
 }

@@ -24,23 +24,27 @@
   
            <table>
 
-           <tr><th>Name</th><th>E-mail</th><th>Phone</th><th>Address</th></tr>
+           <tr><th>ID</th><th>Name</th><th>E-mail</th><th>Phone</th><th>Address</th><th>Action</th></tr>
           <?php while($row = $result->fetch_assoc()): ?>
           
             <tr>
+                <td><?= $row['ID'] ?></td>
                 <td><?= $row['Name'] ?></td>
                 <td><?= $row['e-mail'] ?></td>
                 <td><?= $row['Phone'] ?></td>
                 <td><?= $row['Address'] ?></td>
                 <td>
+                    <a href="view.php?id=<?php echo $row['ID']?>" class="view-btn">View</a>
                     <a href class="edit-btn">Edit</a>
-                    <a href class="delete-btn" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="delete.php?id=<?php echo $row['ID']?>" class="delete-btn" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
         <?php endwhile; ?>
         </table>
         </body>
         </html>
+
+
        
 
 
