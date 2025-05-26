@@ -1,16 +1,21 @@
 <?php
-include 'db.php';
-$id = $_POST['id'];
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$address = $_POST['address'];
+include 'config.php';
 
-$sql = "UPDATE students SET name='$name', email='$email', phone='$phone', address='$address' WHERE id=$id";
-if ($conn->query($sql) === TRUE) {
-    header("Location: index.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id    = $_POST['id'];
+    $name  = $_POST['name'];
+    $email = $_POST['e-mail'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+
+    
+    if ($connection->query($sql) === TRUE) {
+        header("Location: index.php?msg=updated");
+        exit;
+    } else {
+        echo "Error updating record: " . $connection->error;
+    }
 } else {
-    echo "Error updating record: " . $conn->error;
+    echo "Invalid request.";
 }
 ?>
- 

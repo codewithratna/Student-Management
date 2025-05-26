@@ -35,7 +35,7 @@
                 <td><?= $row['Address'] ?></td>
                 <td>
                     <a href="view.php?id=<?php echo $row['ID']?>" class="view-btn">View</a>
-                    <a href class="edit-btn">Edit</a>
+                    <a href="edit.php?id=<?= $row['ID']?>" class="edit-btn">Edit</a>
                     <a href="delete.php?id=<?php echo $row['ID']?>" class="delete-btn" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
