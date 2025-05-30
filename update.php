@@ -43,20 +43,19 @@ $phone = $_POST['phone'];
 $address = $_POST['address'];
  
 
-if ($is_connect)
-
+if ($is_connect) {
+    $id = $_POST['id'];
     $sql = "UPDATE students 
-    
-    SET UPDATE `students` SET `ID`='[value-1]',`Name`='[value-2]',`e-mail`='[value-3]',`Phone`='[value-4]',`Address`='[value-5]' WHERE $ID";
+            SET Name='$name', e-mail='$email', Phone='$phone', Address='$address' 
+            WHERE ID='$id'";
 
-     if ($connection->query($sql) === TRUE) {
-    header("index.php")
-     } else {
+    if ($connection->query($sql) === TRUE) {
+        echo "Record updated successfully";
+        header("Location: index.php");
+    } else {
         echo "Error: " . $sql . "<br>" . $connection->error;
-
-     }
-    
-
+    }
+}
 
 
 
