@@ -11,7 +11,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "student_management";
+$dbname = "assignment_student_management";
 
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -62,6 +62,12 @@ if (isset($_GET['id'])) {
         <tr>
             <td>Address</td>
             <td><?= htmlspecialchars($row['Address']) ?></td>
+        </tr>
+        <tr>
+            <td>Image</td>
+            <td>
+                <img width="300px" height="300px" style="object-fit:conver;" src="<?php echo $row['image'] ?>" alt="">
+            </td>
         </tr>
     </table>
 

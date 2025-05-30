@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "student_management";
+$dbname = "assignment_student_management";
 $is_connect = false;
 
 

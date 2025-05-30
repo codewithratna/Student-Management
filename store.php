@@ -17,7 +17,7 @@ if ($conn->query($sql) === TRUE) {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "student_management";
+$dbname = "assignment_student_management";
 
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -31,7 +31,7 @@ if ($connection) {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "student_management";
+$dbname = "assignment_student_management";
 $is_connect = false;
 
 
@@ -48,10 +48,20 @@ $name = $_POST['name'];
 $email = $_POST['e-mail'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
- 
+$address = $_POST['address'];
+$image = $_FILES['image'];
+
+
+if( !empty($image) ){ 
+    $imagePathName = "uploads/" . basename($image["name"]);
+    // Move file to target directory
+    if (move_uploaded_file($image["tmp_name"], $imagePathName)) {
+        echo "The file " . htmlspecialchars($fileName) . " has been uploaded.";
+    }
+}
 
 if ($is_connect){
-    $sql = "INSERT INTO `students`( `Name`, `e-mail`, `Phone`, `Address`) VALUES ('$name', '$email', '$phone', '$address')";
+    $sql = "INSERT INTO `students`( `Name`, `e-mail`, `image`, `Phone`, `Address`) VALUES ('$name', '$email', '$imagePathName', '$phone', '$address')";
 if ($connection->query($sql) === TRUE) {
     header("Location: index.php");
 } else {

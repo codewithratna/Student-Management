@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="formbold-form-wrapper">
-    <form action="./store.php" method="POST">
+    <form action="./store.php" method="POST" enctype="multipart/form-data">
         <div class="formbold-input-flex">
           <div>
               <label for="name" class="formbold-form-label"> Name </label>
@@ -54,7 +54,16 @@
               />
           </div>
         </div>
-
+        <div>
+              <label for="image" class="formbold-form-label"> Upload Image </label>
+              <input
+                type="file"
+                name="image"
+                id="image"
+                placeholder="Image"
+                class="formbold-form-input"
+              />
+          </div>
       <div>
       <!--
             <label for="message" class="formbold-form-label"> Message </label>

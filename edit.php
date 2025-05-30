@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "student_management";
+$dbname = "assignment_student_management";
 
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
   <div class="formbold-form-wrapper">
     <h2 class="page-title">Edit Student</h2>
 
-    <form action="update.php" method="POST">
+    <form action="./update.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $student['ID'] ?>">
 
         <div class="formbold-input-flex">
@@ -78,7 +78,20 @@ if (isset($_GET['id'])) {
               />
           </div>
         </div>
-
+        <div>
+            <div>
+                Previous Image
+                <img width="100" src="<?php echo $student['image'] ?>"/>
+            </div>
+            <label for="image" class="formbold-form-label"> Image </label>
+            <input
+                type="file"
+                name="image"
+                id="image"
+                placeholder="Image"
+                class="formbold-form-input"
+              />
+          </div>
         <button class="formbold-btn" type="submit">
             Update Student
         </button>
